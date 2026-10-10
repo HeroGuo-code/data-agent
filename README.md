@@ -170,13 +170,10 @@ docker compose build           # 重新构建镜像
 
 ---
 
-## 📚 文档与讲稿
+## 📚 设计文档
 
 | 文档 | 说明 |
 |------|------|
-| [docs/架构讲稿.html](docs/%E6%9E%B6%E6%9E%84%E8%AE%B2%E7%A8%BF.html) | 🎤 **交互式架构演讲讲稿（浏览器打开）** |
-| [docs/讲稿-数据Agent架构与实现.md](docs/%E8%AE%B2%E7%A8%BF-%E6%95%B0%E6%8D%AEAgent%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%AE%9E%E7%8E%B0.md) | 文字版架构与实现讲稿 |
-| [docs/面试八股文-电商经营数据问答DataAgent.md](docs/%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1%E6%96%87-%E7%94%B5%E5%95%86%E7%BB%8F%E8%90%A5%E6%95%B0%E6%8D%AE%E9%97%AE%E7%AD%94DataAgent.md) | 项目速览 / 核心问答 / 部署细节 / 加分点 |
 | [docs/01-架构设计-模块划分.md](docs/01-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1-%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86.md) | 整体架构与模块划分、数据流 |
 | [docs/02-系统提示词.md](docs/02-%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D.md) | 各节点系统提示词说明 |
 | [docs/03-FunctionCall定义.json.md](docs/03-FunctionCall%E5%AE%9A%E4%B9%89.json.md) | FunctionCall 定义 |
@@ -195,4 +192,4 @@ docker compose build           # 重新构建镜像
 - [`qifan777/data-agent-tutorial`](https://github.com/qifan777/data-agent-tutorial)
 - [`spring-ai-alibaba/DataAgent`](https://github.com/spring-ai-alibaba/DataAgent)
 
-本项目为个人学习与作品展示用途。发布前已移除个人配置与 API Key（统一走 `.env` / 环境变量），并清理了运行期调试产物。若发现遗漏的敏感信息，欢迎提 Issue 反馈。
+发布前已移除个人配置与 API Key（统一走 `.env` / 环境变量），并清理了运行期调试产物。若发现遗漏的敏感信息，欢迎提 Issue 反馈。
