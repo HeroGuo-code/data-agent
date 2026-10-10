@@ -1,0 +1,44 @@
+server:
+  port: 9933
+spring:
+  application:
+    name: data-agent
+  profiles:
+    active: private
+  datasource:
+    url: jdbc:postgresql://localhost:5432/data_agent_tutorial
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  ai:
+    openai:
+      # OpenAI 协议地址，不带 /v1，可用官方 https://api.openai.com 或任意中转站地址
+      # 推荐用环境变量注入；也可以在「模型管理」页面配置（存数据库，不进仓库）
+      base-url: ${OPENAI_BASE_URL:https://api.openai.com}
+      api-key: ${OPENAI_API_KEY:}
+      chat:
+        options:
+          # 模型名可通过环境变量 OPENAI_MODEL 覆盖，默认 kimi-k3
+          model: ${OPENAI_MODEL:kimi-k3}
+      embedding:
+        base-url: http://localhost:8000
+        api-key: ${EMBEDDING_API_KEY:unused}
+        options:
+          model: BAAI/bge-small-zh-v1.5
+    vectorstore:
+      pgvector:
+        index-type: HNSW      # 2026 年主流的高性能索引
+        distance-type: cosine_distance # 语义搜索常用的余弦相似度
+        dimensions: 512       # bge-small-zh-v1.5 维度，如果更换了嵌入模型需要删除vector_store表重建
+        initialize-schema: true  # 不填dimensions其实也可以，但是这样很多人换了模型不知道要修改dimensions，spring ai会自动初始化向量维度
+jimmer:
+  dialect: org.babyfish.jimmer.sql.dialect.PostgresDialect
+  show-sql: true
+  pretty-sql: true
+  language: kotlin
+  client:
+    ts:
+      path: /ts.zip
+    openapi:
+      path: /openapi
+      ui-path: /openapi-ui

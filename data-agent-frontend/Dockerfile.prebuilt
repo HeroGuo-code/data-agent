@@ -1,0 +1,5 @@
+# 前端免构建镜像：直接使用已构建的 dist（用于低内存服务器）
+FROM nginx:1.27-alpine
+COPY dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80

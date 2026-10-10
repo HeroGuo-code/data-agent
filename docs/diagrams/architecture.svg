@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1010" viewBox="0 0 1600 1010" font-family="Microsoft YaHei,PingFang SC,Segoe UI,sans-serif">
+<defs>
+<linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f9fd"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+<filter id="cardF" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#0f172a" flood-opacity=".08"/></filter>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7c8aa0"/></marker>
+<marker id="arW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8a6fd8"/></marker>
+<marker id="arOr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#e8853d"/></marker>
+<marker id="arBl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#5f8fd6"/></marker>
+</defs>
+<rect x="0" y="0" width="1600" height="1010" rx="0" fill="url(#bgG)"/>
+<text x="64" y="52" dominant-baseline="central" font-size="27" font-weight="800" fill="#0f172a">Data Agent 总体架构</text>
+<text x="64" y="82" dominant-baseline="central" font-size="13.5" font-weight="500" fill="#64748b">NL2SQL 报告智能体 · Vue 3 + Spring Boot 3 + Spring AI Alibaba Graph · 自上而下分层视图（①–⑤ 为解读路径）</text>
+<rect x="46" y="98" width="1508" height="118" rx="14" fill="#6d8df7" fill-opacity="0.05" stroke="#6d8df7" stroke-width="1"/>
+<path d="M55,118 h191 a10,10 0 0 1 10,10 v58 a10,10 0 0 1 -10,10 h-191 a10,10 0 0 1 -10,-10 v-58 a10,10 0 0 1 10,-10 Z" fill="#ffffff" stroke="#dfe5ef" stroke-width="1.2"/>
+<path d="M55,118 h191 a10,10 0 0 1 10,10 v58 a10,10 0 0 1 -10,10 h-191 a10,10 0 0 1 -10,-10 v-58 a10,10 0 0 1 10,-10 Z" fill="#6d8df7" fill-opacity=".08"/>
+<path d="M46,128 a10,10 0 0 1 10,-10 v78 a10,10 0 0 1 -10,10 Z" fill="#6d8df7"/>
+<circle cx="76" cy="157" r="13" fill="#ffffff" stroke="#6d8df7" stroke-width="2.2"/>
+<text x="76" y="157.5" dominant-baseline="central" font-size="10.5" font-weight="800" fill="#6d8df7" text-anchor="middle">L1</text>
+<g transform="translate(98,157) rotate(90)">
+<text x="0" y="0" dominant-baseline="central" font-size="13" font-weight="700" fill="#334155" text-anchor="middle" letter-spacing="1.5">前端体验层</text>
+</g>
+<text x="268" y="112" dominant-baseline="central" font-size="10" font-weight="700" fill="#6d8df7">Vue 3 + Vite · :3500</text>
+<rect x="46" y="206" width="1508" height="118" rx="14" fill="#34b3ac" fill-opacity="0.05" stroke="#34b3ac" stroke-width="1"/>
+<path d="M55,226 h191 a10,10 0 0 1 10,10 v58 a10,10 0 0 1 -10,10 h-191 a10,10 0 0 1 -10,-10 v-58 a10,10 0 0 1 10,-10 Z" fill="#ffffff" stroke="#dfe5ef" stroke-width="1.2"/>
+<path d="M55,226 h191 a10,10 0 0 1 10,10 v58 a10,10 0 0 1 -10,10 h-191 a10,10 0 0 1 -10,-10 v-58 a10,10 0 0 1 10,-10 Z" fill="#34b3ac" fill-opacity=".08"/>
+<path d="M46,236 a10,10 0 0 1 10,-10 v78 a10,10 0 0 1 -10,10 Z" fill="#34b3ac"/>
+<circle cx="76" cy="265" r="13" fill="#ffffff" stroke="#34b3ac" stroke-width="2.2"/>
+<text x="76" y="265.5" dominant-baseline="central" font-size="10.5" font-weight="800" fill="#34b3ac" text-anchor="middle">L2</text>
+<g transform="translate(98,265) rotate(90)">
+<text x="0" y="0" dominant-baseline="central" font-size="13" font-weight="700" fill="#334155" text-anchor="middle" letter-spacing="1.5">应用接入层</text>
+</g>
+<text x="268" y="220" dominant-baseline="central" font-size="10" font-weight="700" fill="#34b3ac">Spring Boot 3 · Java 21</text>
+<rect x="46" y="314" width="1508" height="404" rx="14" fill="#9678d8" fill-opacity="0.05" stroke="#9678d8" stroke-width="1"/>
+<path d="M55,334 h191 a10,10 0 0 1 10,10 v344 a10,10 0 0 1 -10,10 h-191 a10,10 0 0 1 -10,-10 v-344 a10,10 0 0 1 10,-10 Z" fill="#ffffff" stroke="#dfe5ef" stroke-width="1.2"/>
+<path d="M55,334 h191 a10,10 0 0 1 10,10 v344 a10,10 0 0 1 -10,10 h-191 a10,10 0 0 1 -10,-10 v-344 a10,10 0 0 1 10,-10 Z" fill="#9678d8" fill-opacity=".08"/>
+<path d="M46,344 a10,10 0 0 1 10,-10 v364 a10,10 0 0 1 -10,10 Z" fill="#9678d8"/>
+<circle cx="76" cy="516" r="13" fill="#ffffff" stroke="#9678d8" stroke-width="2.2"/>
+<text x="76" y="516.5" dominant-baseline="central" font-size="10.5" font-weight="800" fill="#9678d8" text-anchor="middle">L3</text>
+<g transform="translate(98,516) rotate(90)">
+<text x="0" y="0" dominant-baseline="central" font-size="13" font-weight="700" fill="#334155" text-anchor="middle" letter-spacing="1.5">智能编排核心</text>
+</g>
+<text x="268" y="328" dominant-baseline="central" font-size="10" font-weight="700" fill="#9678d8">Spring AI Alibaba · StateGraph</text>
+<rect x="46" y="718" width="1508" height="158" rx="14" fill="#7d8fe8" fill-opacity="0.05" stroke="#7d8fe8" stroke-width="1"/>
+<path d="M55,738 h191 a10,10 0 0 1 10,10 v98 a10,10 0 0 1 -10,10 h-191 a10,10 0 0 1 -10,-10 v-98 a10,10 0 0 1 10,-10 Z" fill="#ffffff" stroke="#dfe5ef" stroke-width="1.2"/>
+<path d="M55,738 h191 a10,10 0 0 1 10,10 v98 a10,10 0 0 1 -10,10 h-191 a10,10 0 0 1 -10,-10 v-98 a10,10 0 0 1 10,-10 Z" fill="#7d8fe8" fill-opacity=".08"/>
+<path d="M46,748 a10,10 0 0 1 10,-10 v118 a10,10 0 0 1 -10,10 Z" fill="#7d8fe8"/>
+<circle cx="76" cy="797" r="13" fill="#ffffff" stroke="#7d8fe8" stroke-width="2.2"/>
+<text x="76" y="797.5" dominant-baseline="central" font-size="10.5" font-weight="800" fill="#7d8fe8" text-anchor="middle">L4</text>
+<g transform="translate(98,797) rotate(90)">
+<text x="0" y="0" dominant-baseline="central" font-size="13" font-weight="700" fill="#334155" text-anchor="middle" letter-spacing="1.5">基础设施层</text>
+</g>
+<text x="268" y="732" dominant-baseline="central" font-size="10" font-weight="700" fill="#7d8fe8">Docker Compose 一键编排</text>
+<line x1="690" y1="202" x2="690" y2="221" stroke="#8fa0b5" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="1180" y1="202" x2="1180" y2="221" stroke="#8fa0b5" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="690" y1="310" x2="690" y2="329" stroke="#8fa0b5" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="1180" y1="310" x2="1180" y2="329" stroke="#8fa0b5" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="690" y1="704" x2="690" y2="733" stroke="#8fa0b5" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="1180" y1="704" x2="1180" y2="733" stroke="#8fa0b5" stroke-width="2" marker-end="url(#ar)"/>
+<g filter="url(#cardF)">
+<rect x="264" y="128" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#6d8df7" stroke-width="1.3"/>
+</g>
+<rect x="276" y="142" width="30" height="30" rx="8" fill="#6d8df7"/>
+<text x="291" y="157.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">DLG</text>
+<text x="316" y="148" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">对话工作台 DataChat</text>
+<text x="316" y="169" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">SSE 流式气泡 · 过程细节</text>
+<g filter="url(#cardF)">
+<rect x="533.25" y="128" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#7c93f0" stroke-width="1.3"/>
+</g>
+<rect x="545.25" y="142" width="30" height="30" rx="8" fill="#7c93f0"/>
+<text x="560.25" y="157.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">SET</text>
+<text x="585.25" y="148" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">资产管理</text>
+<text x="585.25" y="169" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">连接池 Schema · 表关系外键</text>
+<g filter="url(#cardF)">
+<rect x="802.5" y="128" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#4fb8b2" stroke-width="1.3"/>
+</g>
+<rect x="814.5" y="142" width="30" height="30" rx="8" fill="#4fb8b2"/>
+<text x="829.5" y="157.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">CFG</text>
+<text x="854.5" y="148" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">智能体配置</text>
+<text x="854.5" y="169" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">模型 · 提示词 · 预设问题</text>
+<g filter="url(#cardF)">
+<rect x="1071.75" y="128" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#8b7fd9" stroke-width="1.3"/>
+</g>
+<rect x="1083.75" y="142" width="30" height="30" rx="8" fill="#8b7fd9"/>
+<text x="1098.75" y="157.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">DBG</text>
+<text x="1123.75" y="148" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">调试与反馈</text>
+<text x="1123.75" y="169" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">会话 Trace · 人工反馈闭环</text>
+<g filter="url(#cardF)">
+<rect x="264" y="236" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#34b3ac" stroke-width="1.3"/>
+</g>
+<rect x="276" y="250" width="30" height="30" rx="8" fill="#34b3ac"/>
+<text x="291" y="265.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">API</text>
+<text x="316" y="256" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">REST API</text>
+<text x="316" y="277" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">会话 · 资产 · 配置 · CRUD</text>
+<g filter="url(#cardF)">
+<rect x="533.25" y="236" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#45a69f" stroke-width="1.3"/>
+</g>
+<rect x="545.25" y="250" width="30" height="30" rx="8" fill="#45a69f"/>
+<text x="560.25" y="265.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">SSE</text>
+<text x="585.25" y="256" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">SSE 流式网关</text>
+<text x="585.25" y="277" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">text/event-stream 事件推送</text>
+<g filter="url(#cardF)">
+<rect x="802.5" y="236" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#5f8fd6" stroke-width="1.3"/>
+</g>
+<rect x="814.5" y="250" width="30" height="30" rx="8" fill="#5f8fd6"/>
+<text x="829.5" y="265.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">A2A</text>
+<text x="854.5" y="256" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">A2A 协议接入</text>
+<text x="854.5" y="277" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">AgentCard · JSON-RPC</text>
+<g filter="url(#cardF)">
+<rect x="1071.75" y="236" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#c98a3b" stroke-width="1.3"/>
+</g>
+<rect x="1083.75" y="250" width="30" height="30" rx="8" fill="#c98a3b"/>
+<text x="1098.75" y="265.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">HITL</text>
+<text x="1123.75" y="256" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">人工确认接口</text>
+<text x="1123.75" y="277" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">反馈回调 · 计划审批</text>
+<rect x="274" y="342" width="1042" height="42" rx="10" fill="#f4f0fc"/>
+<text x="290" y="363.5" dominant-baseline="central" font-size="12.5" font-weight="800" fill="#5b21b6">B1 · StateGraph 编译图</text>
+<rect x="1210.7512" y="353" width="87.2488" height="20" rx="10" fill="#ffffff" stroke="#c9b8f0" stroke-width="1"/>
+<text x="1254.3755999999998" y="363.6" dominant-baseline="central" font-size="9.5" font-weight="700" fill="#6d5b97" text-anchor="middle">A2A 对外暴露</text>
+<rect x="1108.7802" y="353" width="93.97099999999999" height="20" rx="10" fill="#ffffff" stroke="#c9b8f0" stroke-width="1"/>
+<text x="1155.7657" y="363.6" dominant-baseline="central" font-size="9.5" font-weight="700" fill="#6d5b97" text-anchor="middle">人工确认 HITL</text>
+<rect x="973.8935999999999" y="353" width="126.8866" height="20" rx="10" fill="#ffffff" stroke="#c9b8f0" stroke-width="1"/>
+<text x="1037.3368999999998" y="363.6" dominant-baseline="central" font-size="9.5" font-weight="700" fill="#6d5b97" text-anchor="middle">条件路由 · 断点恢复</text>
+<rect x="901.8247999999999" y="353" width="64.06879999999998" height="20" rx="10" fill="#ffffff" stroke="#c9b8f0" stroke-width="1"/>
+<text x="933.8591999999999" y="363.6" dominant-baseline="central" font-size="9.5" font-weight="700" fill="#6d5b97" text-anchor="middle">节点 ×15</text>
+<ellipse cx="286" cy="412" rx="17" ry="8.5" fill="#ffffff" stroke="#90a4c4" stroke-width="1"/>
+<text x="286" y="412.4" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#43608f" text-anchor="middle">①</text>
+<rect x="310" y="399.5" width="88.68" height="25" rx="12.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.15"/>
+<circle cx="322.5" cy="412" r="6.6" fill="#8a6fd8"/>
+<text x="322.5" y="412.4" dominant-baseline="central" font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+<text x="333" y="412.5" dominant-baseline="central" font-size="11" font-weight="650" fill="#4c3d80">意图识别</text>
+<path d="M402.68,412 L424.68,412" fill="none" stroke="#8a6fd8" stroke-width="1.8" marker-end="url(#arW)"/>
+<rect x="432.68" y="399.5" width="108.5416" height="25" rx="12.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.15"/>
+<circle cx="445.18" cy="412" r="6.6" fill="#8a6fd8"/>
+<text x="445.18" y="412.4" dominant-baseline="central" font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+<text x="455.68" y="412.5" dominant-baseline="central" font-size="11" font-weight="650" fill="#4c3d80">Query 改写</text>
+<path d="M545.2216,412 L567.2216,412" fill="none" stroke="#8a6fd8" stroke-width="1.8" marker-end="url(#arW)"/>
+<rect x="575.2216000000001" y="399.5" width="88.68" height="25" rx="12.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.15"/>
+<circle cx="587.7216000000001" cy="412" r="6.6" fill="#8a6fd8"/>
+<text x="587.7216000000001" y="412.4" dominant-baseline="central" font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+<text x="598.2216000000001" y="412.5" dominant-baseline="central" font-size="11" font-weight="650" fill="#4c3d80">证据召回</text>
+<path d="M667.9016000000001,412 L689.9016000000001,412" fill="none" stroke="#8a6fd8" stroke-width="1.8" marker-end="url(#arW)"/>
+<rect x="697.9016000000001" y="399.5" width="116.3252" height="25" rx="12.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.15"/>
+<circle cx="710.4016000000001" cy="412" r="6.6" fill="#8a6fd8"/>
+<text x="710.4016000000001" y="412.4" dominant-baseline="central" font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+<text x="720.9016000000001" y="412.5" dominant-baseline="central" font-size="11" font-weight="650" fill="#4c3d80">Schema 召回</text>
+<path d="M818.2268000000001,412 L840.2268000000001,412" fill="none" stroke="#8a6fd8" stroke-width="1.8" marker-end="url(#arW)"/>
+<rect x="848.2268000000001" y="399.5" width="102.1" height="25" rx="12.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.15"/>
+<circle cx="860.7268000000001" cy="412" r="6.6" fill="#8a6fd8"/>
+<text x="860.7268000000001" y="412.4" dominant-baseline="central" font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle">5</text>
+<text x="871.2268000000001" y="412.5" dominant-baseline="central" font-size="11" font-weight="650" fill="#4c3d80">表关系构建</text>
+<path d="M954.3268000000002,412 L976.3268000000002,412" fill="none" stroke="#8a6fd8" stroke-width="1.8" marker-end="url(#arW)"/>
+<rect x="984.3268000000002" y="399.5" width="102.1" height="25" rx="12.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.15"/>
+<circle cx="996.8268000000002" cy="412" r="6.6" fill="#8a6fd8"/>
+<text x="996.8268000000002" y="412.4" dominant-baseline="central" font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle">6</text>
+<text x="1007.3268000000002" y="412.5" dominant-baseline="central" font-size="11" font-weight="650" fill="#4c3d80">可行性评估</text>
+<rect x="258" y="448" width="1046" height="78" rx="12" fill="#fbf9ff" stroke="#e2d8f4" stroke-width="1.2"/>
+<path d="M1094.4268000000002,424.5 L1094.4268000000002,444 L326,444 L326,477" fill="none" stroke="#e8853d" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arOr)"/>
+<text x="1104.4268000000002" y="434" dominant-baseline="central" font-size="10" font-weight="800" fill="#e8853d">通过</text>
+<text x="1160.4268000000002" y="434" dominant-baseline="central" font-size="10" font-weight="800" fill="#e8853d">② 条件路由</text>
+<text x="350" y="464" dominant-baseline="central" font-size="12" font-weight="800" fill="#5b21b6">B2 · PLAN_EXECUTE_HUB · Agent Loop</text>
+<rect x="1173.6664" y="452.5" width="116.33359999999999" height="19" rx="9.5" fill="#ffffff" stroke="#d8cdf0" stroke-width="1"/>
+<text x="1231.8332" y="462.6" dominant-baseline="central" font-size="9" font-weight="700" fill="#6d5b97" text-anchor="middle">失败自动重试 ≤3 次</text>
+<rect x="1031.3256000000001" y="452.5" width="134.3408" height="19" rx="9.5" fill="#ffffff" stroke="#d8cdf0" stroke-width="1"/>
+<text x="1098.496" y="462.6" dominant-baseline="central" font-size="9" font-weight="700" fill="#6d5b97" text-anchor="middle">异步派发 · async_get</text>
+<rect x="276" y="479.5" width="90.94999999999999" height="25" rx="12.5" fill="#f4f0fc" stroke="#a78bfa" stroke-width="1.15"/>
+<circle cx="287.5" cy="492" r="4.2" fill="#8a6fd8"/>
+<text x="298" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#5b21b6">计划执行器</text>
+<path d="M369.95,492 L379.95,492" fill="none" stroke="#8a6fd8" stroke-width="1.6" marker-end="url(#arW)"/>
+<rect x="382.95" y="479.5" width="66.36" height="25" rx="12.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.15"/>
+<text x="392.95" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="650" fill="#4c3d80">数据查询</text>
+<path d="M452.31,492 L462.31,492" fill="none" stroke="#8a6fd8" stroke-width="1.6" marker-end="url(#arW)"/>
+<rect x="465.31" y="479.5" width="70.0688" height="25" rx="12.5" fill="#ffffff" stroke="#7d8fe8" stroke-width="1.15"/>
+<text x="475.31" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="650" fill="#334155">SQL 生成</text>
+<path d="M538.3788,492 L548.3788,492" fill="none" stroke="#8a6fd8" stroke-width="1.6" marker-end="url(#arW)"/>
+<rect x="551.3788" y="479.5" width="70.0688" height="25" rx="12.5" fill="#ffffff" stroke="#7d8fe8" stroke-width="1.15"/>
+<text x="561.3788" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="650" fill="#334155">SQL 执行</text>
+<path d="M624.4476,492 L634.4476,492" fill="none" stroke="#8a6fd8" stroke-width="1.6" marker-end="url(#arW)"/>
+<rect x="637.4476" y="479.5" width="79.36" height="25" rx="12.5" fill="#fdf4e3" stroke="#d97706" stroke-width="1.15"/>
+<circle cx="648.9476" cy="492" r="4.2" fill="#d97706"/>
+<text x="659.4476" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#92610a">确认执行</text>
+<path d="M719.8076,492 L729.8076,492" fill="none" stroke="#8a6fd8" stroke-width="1.6" marker-end="url(#arW)"/>
+<rect x="732.8076" y="479.5" width="90.23539999999998" height="25" rx="12.5" fill="#ffffff" stroke="#7d8fe8" stroke-width="1.15"/>
+<text x="742.8076" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="650" fill="#334155">Python 生成</text>
+<path d="M826.043,492 L836.043,492" fill="none" stroke="#8a6fd8" stroke-width="1.6" marker-end="url(#arW)"/>
+<rect x="839.043" y="479.5" width="90.23539999999998" height="25" rx="12.5" fill="#ffffff" stroke="#7d8fe8" stroke-width="1.15"/>
+<text x="849.043" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="650" fill="#334155">Python 执行</text>
+<path d="M932.2784,492 L942.2784,492" fill="none" stroke="#8a6fd8" stroke-width="1.6" marker-end="url(#arW)"/>
+<rect x="945.2784" y="479.5" width="90.23539999999998" height="25" rx="12.5" fill="#ffffff" stroke="#7d8fe8" stroke-width="1.15"/>
+<text x="955.2784" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="650" fill="#334155">Python 分析</text>
+<path d="M1038.5138,492 L1048.5138,492" fill="none" stroke="#8a6fd8" stroke-width="1.6" marker-end="url(#arW)"/>
+<rect x="1051.5138" y="479.5" width="66.36" height="25" rx="12.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.15"/>
+<text x="1061.5138" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="650" fill="#4c3d80">报告生成</text>
+<path d="M1120.8737999999998,492 L1130.8737999999998,492" fill="none" stroke="#5f8fd6" stroke-width="1.8" marker-end="url(#arBl)"/>
+<rect x="1133.8737999999998" y="479.5" width="85.0688" height="25" rx="12.5" fill="#eef4fe" stroke="#5f8fd6" stroke-width="1.15" stroke-dasharray="4 3"/>
+<circle cx="1146.3737999999998" cy="492" r="6.6" fill="#5f8fd6"/>
+<text x="1146.3737999999998" y="492.4" dominant-baseline="central" font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle">⑤</text>
+<text x="1156.8737999999998" y="492.5" dominant-baseline="central" font-size="9.5" font-weight="650" fill="#2d5aa0">SSE 推送</text>
+<path d="M326,504.5 L326,517 L308,517 L308,529" fill="none" stroke="#e8853d" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arOr)"/>
+<rect x="274" y="529.5" width="68.8" height="25" rx="12.5" fill="#fdf6ec" stroke="#e8a15f" stroke-width="1.15" stroke-dasharray="4 3"/>
+<text x="284" y="542.5" dominant-baseline="central" font-size="10" font-weight="650" fill="#92610a">澄清话术</text>
+<text x="352.8" y="542.6" dominant-baseline="central" font-size="9.5" font-weight="700" fill="#a87712">存疑</text>
+<ellipse cx="438.8" cy="542" rx="27.18" ry="8.5" fill="#ffffff" stroke="#90a4c4" stroke-width="1"/>
+<text x="438.8" y="542.4" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#43608f" text-anchor="middle">③</text>
+<text x="438.8" y="559" dominant-baseline="central" font-size="9.5" font-weight="700" fill="#43608f" text-anchor="middle">澄清回路</text>
+<line x1="677.1275999999999" y1="504.5" x2="677.1275999999999" y2="562" stroke="#e8853d" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arOr)"/>
+<rect x="487.1275999999999" y="566" width="380" height="46" rx="12" fill="#fdf6ec" stroke="#e8a15f" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="677.1275999999999" y="584" dominant-baseline="central" font-size="12" font-weight="800" fill="#92610a" text-anchor="middle">人工确认 · Human-in-the-loop</text>
+<text x="677.1275999999999" y="601.5" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#a87712" text-anchor="middle">触发即暂停 → SSE 审批 → 回调恢复 · 开关开 = 强制人工介入</text>
+<ellipse cx="893.1275999999999" cy="589" rx="17" ry="8.5" fill="#ffffff" stroke="#90a4c4" stroke-width="1"/>
+<text x="893.1275999999999" y="589.4" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#43608f" text-anchor="middle">④</text>
+<text x="276" y="644" dominant-baseline="central" font-size="9" font-weight="700" fill="#8a83ad">节点 ID 映射</text>
+<text x="276" y="662" dominant-baseline="central" font-size="9.5" font-weight="700" fill="#6d5b97">召回 · 规划</text>
+<text x="414" y="662" dominant-baseline="central" font-size="8.5" font-weight="500" fill="#5b5390">INTENT_RECOGNITION → EVIDENCE_RECALL → SCHEMA_RECALL → TABLE_RELATION → FEASIBILITY_ASSESSMENT → PLANNER → HUMAN_FEEDBACK → PLAN_EXECUTION</text>
+<text x="276" y="680" dominant-baseline="central" font-size="9.5" font-weight="700" fill="#6d5b97">执行 · 输出</text>
+<text x="414" y="680" dominant-baseline="central" font-size="8.5" font-weight="500" fill="#5b5390">SQL_GENERATION → SQL_EXECUTION → PYTHON_GENERATION → PYTHON_EXECUTION → PYTHON_ANALYSIS → REPORT_GENERATION ｜ 闲聊分支 → PROMPT_OUTPUT（直出 → END）</text>
+<g filter="url(#cardF)">
+<rect x="264" y="768" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#7d8fe8" stroke-width="1.3"/>
+</g>
+<rect x="276" y="782" width="30" height="30" rx="8" fill="#7d8fe8"/>
+<text x="291" y="797.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">PG</text>
+<text x="316" y="788" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">PostgreSQL 18</text>
+<text x="316" y="809" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">pgvector 向量库 · 业务库 · Trace</text>
+<g filter="url(#cardF)">
+<rect x="533.25" y="768" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#c2699a" stroke-width="1.3"/>
+</g>
+<rect x="545.25" y="782" width="30" height="30" rx="8" fill="#c2699a"/>
+<text x="560.25" y="797.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">RDS</text>
+<text x="585.25" y="788" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">Redis 7</text>
+<text x="585.25" y="809" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">Checkpoint 断点 · 会话记忆</text>
+<g filter="url(#cardF)">
+<rect x="802.5" y="768" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#45a69f" stroke-width="1.3"/>
+</g>
+<rect x="814.5" y="782" width="30" height="30" rx="8" fill="#45a69f"/>
+<text x="829.5" y="797.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">EMB</text>
+<text x="854.5" y="788" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">embedding-server</text>
+<text x="854.5" y="809" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">multilingual-e5-large · :8000</text>
+<g filter="url(#cardF)">
+<rect x="1071.75" y="768" width="258.25" height="58" rx="12" fill="#ffffff" stroke="#c98a3b" stroke-width="1.3"/>
+</g>
+<rect x="1083.75" y="782" width="30" height="30" rx="8" fill="#c98a3b"/>
+<text x="1098.75" y="797.5" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">PY</text>
+<text x="1123.75" y="788" dominant-baseline="central" font-size="14" font-weight="700" fill="#0f172a">Python 沙箱</text>
+<text x="1123.75" y="809" dominant-baseline="central" font-size="11" font-weight="500" fill="#64748b">data-agent-python · 断网超时</text>
+<text x="797" y="845" dominant-baseline="central" font-size="10.5" font-weight="500" fill="#64748b" text-anchor="middle">外部依赖：LLM 推理服务（OpenAI 兼容协议 · 模型管理页可配 · 对话 / 生成 / 向量化三路调用）</text>
+<rect x="1348" y="314" width="206" height="582" rx="14" fill="#ffffff" stroke="#dfe5ef" stroke-width="1.2"/>
+<text x="1451" y="346" dominant-baseline="central" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">三道安全防线</text>
+<text x="1451" y="366" dominant-baseline="central" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">按序拦截 · 任一拒绝即终止</text>
+<rect x="1362" y="388" width="178" height="78" rx="10" fill="#ffffff" stroke="#7d8fe8" stroke-width="1.2"/>
+<rect x="1367" y="398" width="4" height="58" rx="2" fill="#7d8fe8"/>
+<circle cx="1390" cy="413" r="11" fill="#7d8fe8"/>
+<text x="1390" y="413.6" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">①</text>
+<text x="1408" y="414" dominant-baseline="central" font-size="12" font-weight="800" fill="#0f172a">资产边界</text>
+<text x="1382" y="438" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">数据资产注册 · 表/字段白名单</text>
+<text x="1382" y="453" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">越权访问直接拒答</text>
+<path d="M1451,470 L1451,482" fill="none" stroke="#8fa0b5" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="1362" y="486" width="178" height="78" rx="10" fill="#ffffff" stroke="#c2699a" stroke-width="1.2"/>
+<rect x="1367" y="496" width="4" height="58" rx="2" fill="#c2699a"/>
+<circle cx="1390" cy="511" r="11" fill="#c2699a"/>
+<text x="1390" y="511.6" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">②</text>
+<text x="1408" y="512" dominant-baseline="central" font-size="12" font-weight="800" fill="#0f172a">权限与脱敏</text>
+<text x="1382" y="536" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">SELECT 只读校验 · 字段脱敏</text>
+<text x="1382" y="551" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">多语句与 DDL/DML 拦截</text>
+<path d="M1451,568 L1451,580" fill="none" stroke="#8fa0b5" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="1362" y="584" width="178" height="78" rx="10" fill="#ffffff" stroke="#c98a3b" stroke-width="1.2"/>
+<rect x="1367" y="594" width="4" height="58" rx="2" fill="#c98a3b"/>
+<circle cx="1390" cy="609" r="11" fill="#c98a3b"/>
+<text x="1390" y="609.6" dominant-baseline="central" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">③</text>
+<text x="1408" y="610" dominant-baseline="central" font-size="12" font-weight="800" fill="#0f172a">沙箱隔离</text>
+<text x="1382" y="634" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">断网镜像 · CPU/内存限额</text>
+<text x="1382" y="649" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">超时熔断 · 脚本落盘隔离</text>
+<rect x="1362" y="680" width="178" height="76" rx="10" fill="#fdf6ec" stroke="#e8a15f" stroke-width="1.1" stroke-dasharray="5 4"/>
+<text x="1451" y="703" dominant-baseline="central" font-size="10" font-weight="700" fill="#92610a" text-anchor="middle">人工确认开关开启时</text>
+<text x="1451" y="721" dominant-baseline="central" font-size="10" font-weight="700" fill="#92610a" text-anchor="middle">任意计划步骤强制</text>
+<text x="1451" y="739" dominant-baseline="central" font-size="10" font-weight="700" fill="#92610a" text-anchor="middle">人工介入</text>
+<text x="1362" y="790" dominant-baseline="central" font-size="11" font-weight="800" fill="#334155">图例</text>
+<rect x="1362" y="799" width="34" height="15" rx="7.5" fill="#ffffff" stroke="#9678d8" stroke-width="1.1"/>
+<text x="1408" y="807" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">StateGraph 节点</text>
+<rect x="1362" y="821" width="34" height="15" rx="7.5" fill="#fdf6ec" stroke="#e8a15f" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="1408" y="829" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">人工 · 条件分支</text>
+<rect x="1362" y="843" width="34" height="15" rx="7.5" fill="#eef4fe" stroke="#5f8fd6" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="1408" y="851" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">SSE 流式推送</text>
+<line x1="1363" y1="873" x2="1395" y2="873" stroke="#8fa0b5" stroke-width="1.7" marker-end="url(#ar)"/>
+<text x="1408" y="873" dominant-baseline="central" font-size="9.5" font-weight="500" fill="#64748b">调用 · 数据流向</text>
+<rect x="46" y="910" width="1508" height="64" rx="14" fill="#0f1c3f"/>
+<text x="82" y="938" dominant-baseline="central" font-size="15" font-weight="800" fill="#ffffff">一体化交付</text>
+<text x="82" y="960" dominant-baseline="central" font-size="11" font-weight="500" fill="#9fb0d8">根目录 docker-compose.yml · docker compose up -d --build · 首次构建拉取 pgvector / redis:7 / e5-large 镜像</text>
+<text x="1530" y="950" dominant-baseline="central" font-size="11" font-weight="500" fill="#c9d6f2" text-anchor="end">内嵌容器：data-agent-pg · phoenix-redis · embedding-server(:8000) · data-agent-python(沙箱镜像)</text>
+</svg>

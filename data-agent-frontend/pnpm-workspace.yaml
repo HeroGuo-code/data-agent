@@ -1,0 +1,3 @@
+# pnpm 11 构建许可：允许 esbuild 执行其安装脚本
+onlyBuiltDependencies:
+  - esbuild

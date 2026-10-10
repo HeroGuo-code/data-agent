@@ -1,0 +1,65 @@
+﻿# --- IDE / OS -----------------------------------------------
+/.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# --- Backend build output -----------------------------------
+data-agent-backend-java/target/
+data-agent-backend/target/
+*.jar
+!target/*.jar.local
+
+# --- Frontend -----------------------------------------------
+node_modules/
+data-agent-frontend/dist/
+data-agent-frontend/public/__diag/
+
+# --- Logs & runtime -----------------------------------------
+*.log
+*.err.log
+nohup.out
+*.pid
+backend-new.log
+backend-new.err.log
+
+# --- Env (keep examples; ignore secrets) ---------------------
+.env
+.env.*
+!.env.example
+
+# --- Debug / local-only artifacts ----------------------------
+resp_*.sse
+shot_*.png
+.shot*.png
+out*.json
+req*.json
+emb*.json
+
+# --- Database dumps / seed data ------------------------------
+# Keep seed & mock data for open source:
+#   - database.sql            (PG agent metadata/knowledge dump)
+#   - src/main/resources/dev_20240627/**  (SQLite demo DBs: ecommerce_ops + knowledge_base + BIRD demos)
+# Runtime copies under data-agent-backend-java/data/ are generated
+# from the resources below at startup, so they are NOT committed:
+data-agent-backend-java/data/
+
+# --- Editor/backup files -------------------------------------
+*.bak
+*.recover
+*~
+docs/diagrams/__arch_check.png
+
+# --- Deployment artifacts & large binaries --------------------
+*.tar.gz
+*.err
+docker_ps.txt
+
+# --- Embedding model binaries（约 90MB，不入库） ---------------
+# 构建镜像时若缺失会自动从 HuggingFace 下载（国内网络可预下载放入该目录）
+embedding-server/models/
+
+# --- Exceptions ------------------------------------------------
+# 前端构建期变量（仅含 /api 前缀，非敏感，必须入库）
+!data-agent-frontend/.env

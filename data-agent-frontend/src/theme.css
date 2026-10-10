@@ -1,0 +1,181 @@
+/* ============================================================
+   白色科技风 · 全局主题
+   品牌蓝 #2563eb / 中性墨色 / 白色卡片 / 极轻阴影
+   ============================================================ */
+
+:root {
+  /* 品牌色 */
+  --brand: #2563eb;
+  --brand-hover: #1d4ed8;
+  --brand-weak: #eff6ff;
+  --brand-border: #bfdbfe;
+  --brand-gradient: linear-gradient(135deg, #2563eb, #3b82f6);
+
+  /* 文字 */
+  --ink: #0f172a;
+  --ink-2: #475569;
+  --ink-3: #94a3b8;
+
+  /* 背景与边框 */
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --line: #e6eaf2;
+
+  /* 语义色（仅成功 / 危险两处，低饱和使用） */
+  --success: #059669;
+  --success-weak: #ecfdf5;
+  --success-border: #a7f3d0;
+  --danger: #dc2626;
+  --danger-weak: #fef2f2;
+  --danger-border: #fecaca;
+
+  /* 圆角 */
+  --radius-card: 12px;
+  --radius-ctl: 8px;
+
+  /* 阴影 */
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-2: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+/* ---------- Element Plus 主色变量归一 ---------- */
+:root {
+  --el-color-primary: var(--brand);
+  --el-color-primary-dark-2: var(--brand-hover);
+  --el-color-primary-light-3: #6c95f0;
+  --el-color-primary-light-5: #92b1f5;
+  --el-color-primary-light-7: #becdf9;
+  --el-color-primary-light-8: #d3e0fb;
+  --el-color-primary-light-9: var(--brand-weak);
+
+  --el-color-success: var(--success);
+  --el-color-success-dark-2: #047854;
+  --el-color-success-light-3: #50b696;
+  --el-color-success-light-5: #82cbb4;
+  --el-color-success-light-7: #b4e0d2;
+  --el-color-success-light-8: #cdeae1;
+  --el-color-success-light-9: var(--success-weak);
+
+  --el-color-danger: var(--danger);
+  --el-color-error: var(--danger);
+  --el-color-danger-dark-2: #b01e1e;
+  --el-color-danger-light-3: #e76767;
+  --el-color-danger-light-5: #ee9393;
+  --el-color-danger-light-7: #f5bebe;
+  --el-color-danger-light-8: #f8d4d4;
+  --el-color-danger-light-9: var(--danger-weak);
+
+  /* 文字 / 边框 / 背景中性化 */
+  --el-text-color-primary: var(--ink);
+  --el-text-color-regular: var(--ink-2);
+  --el-text-color-secondary: var(--ink-3);
+  --el-border-color: var(--line);
+  --el-border-color-light: var(--line);
+  --el-border-color-lighter: #eef1f6;
+  --el-border-color-extra-light: #f1f4f9;
+  --el-fill-color-blank: var(--card);
+  --el-bg-color-page: var(--bg);
+  --el-border-radius-base: var(--radius-ctl);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* ---------- 通用组件形态 ---------- */
+.el-button {
+  border-radius: var(--radius-ctl);
+  font-weight: 500;
+}
+
+.el-button--primary {
+  --el-button-hover-bg-color: var(--brand-hover);
+  --el-button-hover-border-color: var(--brand-hover);
+  --el-button-active-bg-color: var(--brand-hover);
+  --el-button-active-border-color: var(--brand-hover);
+}
+
+.el-card {
+  border-radius: var(--radius-card);
+  border-color: var(--line);
+  box-shadow: var(--shadow-1);
+}
+
+.el-card__header {
+  border-bottom-color: var(--line);
+}
+
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select__wrapper {
+  border-radius: var(--radius-ctl);
+}
+
+.el-input__wrapper {
+  box-shadow: 0 0 0 1px var(--line) inset;
+}
+
+.el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--brand) inset;
+}
+
+.el-select__wrapper {
+  box-shadow: 0 0 0 1px var(--line) inset;
+}
+
+.el-select__wrapper.is-focused {
+  box-shadow: 0 0 0 1px var(--brand) inset;
+}
+
+/* ---------- 表格 ---------- */
+.el-table {
+  --el-table-border-color: var(--line);
+  --el-table-header-bg-color: #f8fafc;
+  --el-table-header-text-color: var(--ink-2);
+  --el-table-row-hover-bg-color: #f3f6fc;
+  border-radius: var(--radius-ctl);
+}
+
+.el-table th.el-table__cell {
+  font-weight: 600;
+}
+
+/* ---------- 侧边菜单：白色舒展 + 品牌蓝激活态 ---------- */
+.el-menu {
+  border-right: none;
+}
+
+.el-menu-item,
+.el-sub-menu__title {
+  height: 44px;
+  line-height: 44px;
+  margin: 3px 10px;
+  border-radius: var(--radius-ctl);
+  color: var(--ink-2);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.el-menu-item:hover,
+.el-sub-menu__title:hover {
+  background-color: #f3f6fc;
+}
+
+.el-menu-item.is-active {
+  color: var(--brand);
+  background-color: var(--brand-weak);
+  font-weight: 600;
+}
+
+.el-menu-item.is-active:hover {
+  background-color: var(--brand-weak);
+}
+
+.el-sub-menu.is-active > .el-sub-menu__title {
+  color: var(--brand);
+}
+
+.el-menu-item .el-icon,
+.el-sub-menu__title .el-icon {
+  color: inherit;
+}

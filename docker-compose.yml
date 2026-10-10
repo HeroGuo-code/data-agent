@@ -1,0 +1,129 @@
+# Data Agent 全栈 Docker 编排：PostgreSQL/pgvector + Redis + Embedding + Python 沙箱 + 后端 + 前端
+# 首次启动（构建全部镜像 + 初始化数据库）：docker compose up -d --build
+# 构建：docker compose build    停止：docker compose down    清数据：docker compose down -v
+# 模型 Key：在项目根目录建 .env：
+#   OPENAI_BASE_URL=https://你的地址
+#   OPENAI_API_KEY=你的Key
+name: data-agent
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg18
+    container_name: data-agent-pg
+    restart: unless-stopped
+    # 生产安全：不对外暴露端口，仅容器网络内访问（运维用 docker exec）
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: data_agent_tutorial
+    volumes:
+      - data-agent-pgdata:/var/lib/postgresql
+      # 初始化库：完整 pg_dump（db_table/db_column/vector_store 及示例数据）
+      - ./database.sql:/docker-entrypoint-initdb.d/01-database.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d data_agent_tutorial"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    container_name: phoenix-redis
+    restart: unless-stopped
+    # 生产安全：不对外暴露端口；限制内存防止挤压宿主上的其他服务
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru"]
+    volumes:
+      - data-agent-redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  embedding-server:
+    image: data-agent-embedding-server:latest
+    build:
+      context: ./embedding-server
+      dockerfile: Dockerfile
+    container_name: embedding-server
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: "8000"
+      EMBED_MODEL: BAAI/bge-small-zh-v1.5
+      FASTEMBED_CACHE_DIR: /app/models
+      HF_HUB_OFFLINE: "1"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      start_period: 90s
+      retries: 10
+
+  # Python 分析沙箱镜像（后端经宿主 docker 调用，镜像名与 SimplePythonExecutor 期望一致）
+  python-sandbox:
+    image: data-agent-python:latest
+    build: ./data-agent-backend-java/python-sandbox
+    container_name: python-sandbox
+    restart: "no"
+    profiles: ["sandbox"]
+
+  backend:
+    image: data-agent-backend:latest
+    build:
+      context: ./data-agent-backend-java
+      dockerfile: Dockerfile
+    container_name: data-agent-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      embedding-server:
+        condition: service_started
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/data_agent_tutorial"
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_AI_OPENAI_EMBEDDING_BASE_URL: "http://embedding-server:8000"
+      OPENAI_BASE_URL: "${OPENAI_BASE_URL:-https://api.openai.com}"
+      OPENAI_API_KEY: "${OPENAI_API_KEY:-sk-placeholder}"
+      OPENAI_MODEL: "${OPENAI_MODEL:-kimi-k3}"
+      # 浏览器端 A2A 客户端访问地址（前端统一覆写为同源相对路径，此处保持一致）
+      A2A_PUBLIC_URL: "/api/a2a/jsonrpc"
+      DATA_AGENT_PYTHON_DOCKER_IMAGE: data-agent-python:latest
+      # 4G 内存服务器精简配置：限制 JVM 堆
+      JAVA_OPTS: "-Xms128m -Xmx700m"
+    # 生产安全：后端不直接对外，经 frontend 容器 nginx 代理访问
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:9933/asset/summary >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+
+  frontend:
+    image: data-agent-frontend:latest
+    build:
+      context: ./data-agent-frontend
+      dockerfile: Dockerfile
+    container_name: data-agent-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      # 唯一对外端口：宿主 Nginx 反代该端口（服务器 .env 设 FRONTEND_PORT=18080，本地默认 8080）
+      - "${FRONTEND_PORT:-8080}:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  data-agent-pgdata:
+    driver: local
+  data-agent-redisdata:
+    driver: local

@@ -1,0 +1,6 @@
+<settings>
+  <!-- 境外服务器部署：直连官方仓库（pom.xml 已定义 spring 官方仓库） -->
+  <!-- 国内网络构建如缓慢，可换回阿里云镜像：
+       <mirror><id>aliyun</id><mirrorOf>central</mirrorOf><url>https://maven.aliyun.com/repository/public</url></mirror> -->
+  <mirrors/>
+</settings>
